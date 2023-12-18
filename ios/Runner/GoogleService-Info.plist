@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDow4khkbTV3vEMgv31H9usX8tkTO0wswU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>277404775820</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.petterson.app.chkv</string>
+	<key>PROJECT_ID</key>
+	<string>c-h-kv-fhyvkm</string>
+	<key>STORAGE_BUCKET</key>
+	<string>c-h-kv-fhyvkm.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:277404775820:ios:6cd92462c709145b2f92a9</string>
+</dict>
+</plist>

@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "company",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Owner",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Name",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}
