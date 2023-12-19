@@ -102,7 +102,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            12.0, 0.0, 12.0, 0.0),
+                            32.0, 0.0, 32.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -121,7 +121,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 32.0, 0.0, 8.0),
+                                      12.0, 3.0, 0.0, 8.0),
                                   child: Text(
                                     'Sign up',
                                     textAlign: TextAlign.start,
@@ -150,7 +150,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 0.0),
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController1,
                                   focusNode: _model.textFieldFocusNode1,
@@ -204,7 +204,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 0.0),
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController2,
                                   focusNode: _model.textFieldFocusNode2,
@@ -257,7 +257,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 0.0),
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.passwordTextController,
                                   focusNode: _model.textFieldFocusNode3,
@@ -327,7 +327,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 0.0),
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
                                       _model.confirmPasswordTextController,
@@ -396,125 +396,111 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       .asValidator(context),
                                 ),
                               ),
-                              Flexible(
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 36.0, 16.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Theme(
-                                            data: ThemeData(
-                                              checkboxTheme: CheckboxThemeData(
-                                                visualDensity:
-                                                    VisualDensity.compact,
-                                                materialTapTargetSize:
-                                                    MaterialTapTargetSize
-                                                        .shrinkWrap,
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          4.0),
-                                                ),
-                                              ),
-                                              unselectedWidgetColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                            ),
-                                            child: Checkbox(
-                                              value: _model.checkboxValue ??=
-                                                  true,
-                                              onChanged: (newValue) async {
-                                                setState(() => _model
-                                                    .checkboxValue = newValue!);
-                                              },
-                                              activeColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              checkColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .info,
-                                            ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 32.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Theme(
+                                      data: ThemeData(
+                                        checkboxTheme: CheckboxThemeData(
+                                          visualDensity: VisualDensity.compact,
+                                          materialTapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(4.0),
                                           ),
-                                          Flexible(
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Container(
-                                                width: 316.0,
-                                                decoration: const BoxDecoration(),
-                                                child: RichText(
-                                                  textScaleFactor:
-                                                      MediaQuery.of(context)
-                                                          .textScaleFactor,
-                                                  text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                        text:
-                                                            'By creating an account, you agree to our ',
-                                                        style:
+                                        ),
+                                        unselectedWidgetColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                      ),
+                                      child: Checkbox(
+                                        value: _model.checkboxValue ??= true,
+                                        onChanged: (newValue) async {
+                                          setState(() =>
+                                              _model.checkboxValue = newValue!);
+                                        },
+                                        activeColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        checkColor:
+                                            FlutterFlowTheme.of(context).info,
+                                      ),
+                                    ),
+                                    Flexible(
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 0.0, 0.0),
+                                        child: Container(
+                                          width: 316.0,
+                                          decoration: const BoxDecoration(),
+                                          child: RichText(
+                                            textScaleFactor:
+                                                MediaQuery.of(context)
+                                                    .textScaleFactor,
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text:
+                                                      'By creating an account, you agree to our ',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                ),
+                                                                .secondaryText,
+                                                        fontSize: 12.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
                                                       ),
-                                                      TextSpan(
-                                                        text: 'Terms of Use',
-                                                        style:
-                                                            GoogleFonts.getFont(
-                                                          'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                      ),
-                                                      TextSpan(
-                                                        text: ' and our ',
-                                                        style:
-                                                            GoogleFonts.getFont(
-                                                          'Inter',
-                                                        ),
-                                                      ),
-                                                      TextSpan(
-                                                        text: 'Privacy Policy',
-                                                        style:
-                                                            GoogleFonts.getFont(
-                                                          'Roboto',
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    style: FlutterFlowTheme.of(
+                                                ),
+                                                TextSpan(
+                                                  text: 'Terms of Use',
+                                                  style: GoogleFonts.getFont(
+                                                    'Roboto',
+                                                    color: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .primaryText,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 12.0,
                                                   ),
                                                 ),
-                                              ),
+                                                TextSpan(
+                                                  text: ' and our ',
+                                                  style: GoogleFonts.getFont(
+                                                    'Inter',
+                                                    fontSize: 12.0,
+                                                  ),
+                                                ),
+                                                TextSpan(
+                                                  text: 'Privacy Policy',
+                                                  style: GoogleFonts.getFont(
+                                                    'Roboto',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 12.0,
+                                                  ),
+                                                )
+                                              ],
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Sora',
+                                                        fontSize: 12.0,
+                                                      ),
                                             ),
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],

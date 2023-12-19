@@ -122,6 +122,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateBusiness',
           path: '/createBusiness',
           builder: (context, params) => const CreateBusinessWidget(),
+        ),
+        FFRoute(
+          name: 'Community',
+          path: '/community',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Community')
+              : const CommunityWidget(),
+        ),
+        FFRoute(
+          name: 'CompanyDetails',
+          path: '/companyDetails',
+          builder: (context, params) => const CompanyDetailsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

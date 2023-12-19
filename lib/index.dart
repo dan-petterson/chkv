@@ -9,3 +9,6 @@ export '/user/edit_user_profile/edit_user_profile_widget.dart'
 export '/company/companies/companies_widget.dart' show CompaniesWidget;
 export '/company/create_business/create_business_widget.dart'
     show CreateBusinessWidget;
+export '/main/community/community_widget.dart' show CommunityWidget;
+export '/company/company_details/company_details_widget.dart'
+    show CompanyDetailsWidget;
