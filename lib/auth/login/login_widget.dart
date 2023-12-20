@@ -205,7 +205,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                   style:
                                       FlutterFlowTheme.of(context).bodyMedium,
-                                  keyboardType: TextInputType.phone,
+                                  maxLength: 10,
+                                  maxLengthEnforcement:
+                                      MaxLengthEnforcement.enforced,
+                                  buildCounter: (context,
+                                          {required currentLength,
+                                          required isFocused,
+                                          maxLength}) =>
+                                      null,
+                                  keyboardType: TextInputType.number,
                                   validator: _model
                                       .emailAddressControllerValidator
                                       .asValidator(context),
@@ -323,7 +331,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     return;
                                   }
 
-                                  context.goNamedAuth(
+                                  context.pushNamedAuth(
                                       'HomePage', context.mounted);
                                 },
                                 text: 'Continue',

@@ -14,7 +14,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressController;
-  final emailAddressMask = MaskTextInputFormatter(mask: '+# (###) ###-##-##');
+  final emailAddressMask = MaskTextInputFormatter(mask: '(###) ###-####');
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;

@@ -100,19 +100,24 @@ class _CompaniesWidgetState extends State<CompaniesWidget> {
                             )
                           ],
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 0.0, 12.0),
-                              child: Text(
-                                'Manage your Business accounts below.',
-                                style: FlutterFlowTheme.of(context).labelMedium,
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 6.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 12.0, 0.0, 12.0),
+                                child: Text(
+                                  'Manage your Business accounts below.',
+                                  style:
+                                      FlutterFlowTheme.of(context).labelMedium,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       Padding(
@@ -267,7 +272,7 @@ class _CompaniesWidgetState extends State<CompaniesWidget> {
               Align(
                 alignment: const AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.pushNamed('CreateBusiness');
@@ -292,6 +297,24 @@ class _CompaniesWidgetState extends State<CompaniesWidget> {
                         width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ),
+              ),
+              Opacity(
+                opacity: 0.0,
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      'No Business accounts',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).displayMedium,
                     ),
                   ),
                 ),

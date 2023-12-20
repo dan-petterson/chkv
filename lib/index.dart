@@ -12,3 +12,4 @@ export '/company/create_business/create_business_widget.dart'
 export '/main/community/community_widget.dart' show CommunityWidget;
 export '/company/company_details/company_details_widget.dart'
     show CompanyDetailsWidget;
+export '/user/user_profile/user_profile_widget.dart' show UserProfileWidget;

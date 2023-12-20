@@ -134,6 +134,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CompanyDetails',
           path: '/companyDetails',
           builder: (context, params) => const CompanyDetailsWidget(),
+        ),
+        FFRoute(
+          name: 'UserProfile',
+          path: '/userProfile',
+          builder: (context, params) => const UserProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
