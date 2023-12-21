@@ -227,19 +227,160 @@ class _CommunityWidgetState extends State<CommunityWidget>
                         );
                       },
                     ),
-                    Text(
-                      'Tab View 2',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Sora',
-                            fontSize: 32.0,
-                          ),
+                    StreamBuilder<List<UsersRecord>>(
+                      stream: queryUsersRecord(
+                        queryBuilder: (usersRecord) => usersRecord.where(
+                          'email',
+                          isNotEqualTo: currentUserEmail,
+                        ),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 70.0,
+                              height: 70.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<UsersRecord> listViewUsersRecordList =
+                            snapshot.data!;
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewUsersRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewUsersRecord =
+                                listViewUsersRecordList[listViewIndex];
+                            return InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await ChatsRecord.collection
+                                    .doc()
+                                    .set(createChatsRecordData(
+                                      userA: currentUserReference,
+                                      userB: listViewUsersRecord.reference,
+                                    ));
+
+                                context.pushNamed('InBox');
+                              },
+                              child: Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 4.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 20.0, 0.0, 20.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            listViewUsersRecord.photoUrl,
+                                            width: 68.0,
+                                            height: 68.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 20.0, 0.0),
+                                        child: Text(
+                                          listViewUsersRecord.displayName,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
                     ),
-                    Text(
-                      'Tab View 3',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Sora',
-                            fontSize: 32.0,
-                          ),
+                    StreamBuilder<List<CompanyRecord>>(
+                      stream: queryCompanyRecord(),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 70.0,
+                              height: 70.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<CompanyRecord> listViewCompanyRecordList =
+                            snapshot.data!;
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewCompanyRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewCompanyRecord =
+                                listViewCompanyRecordList[listViewIndex];
+                            return Card(
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              elevation: 4.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      child: Image.network(
+                                        listViewCompanyRecord.logo,
+                                        width: 124.0,
+                                        height: 64.0,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    listViewCompanyRecord.name,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
                     ),
                   ],
                 ),

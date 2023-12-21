@@ -301,24 +301,6 @@ class _CompaniesWidgetState extends State<CompaniesWidget> {
                   ),
                 ),
               ),
-              Opacity(
-                opacity: 0.0,
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Text(
-                      'No Business accounts',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).displayMedium,
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),

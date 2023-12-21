@@ -70,6 +70,26 @@ class UsersRecord extends FirestoreRecord {
   String get jobPosition => _jobPosition ?? '';
   bool hasJobPosition() => _jobPosition != null;
 
+  // "shortDescription" field.
+  String? _shortDescription;
+  String get shortDescription => _shortDescription ?? '';
+  bool hasShortDescription() => _shortDescription != null;
+
+  // "last_active_time" field.
+  DateTime? _lastActiveTime;
+  DateTime? get lastActiveTime => _lastActiveTime;
+  bool hasLastActiveTime() => _lastActiveTime != null;
+
+  // "role" field.
+  String? _role;
+  String get role => _role ?? '';
+  bool hasRole() => _role != null;
+
+  // "title" field.
+  String? _title;
+  String get title => _title ?? '';
+  bool hasTitle() => _title != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -82,6 +102,10 @@ class UsersRecord extends FirestoreRecord {
     _locationName = snapshotData['location_name'] as String?;
     _locationLatLng = snapshotData['location_lat_lng'] as LatLng?;
     _jobPosition = snapshotData['job_position'] as String?;
+    _shortDescription = snapshotData['shortDescription'] as String?;
+    _lastActiveTime = snapshotData['last_active_time'] as DateTime?;
+    _role = snapshotData['role'] as String?;
+    _title = snapshotData['title'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -129,6 +153,10 @@ Map<String, dynamic> createUsersRecordData({
   String? locationName,
   LatLng? locationLatLng,
   String? jobPosition,
+  String? shortDescription,
+  DateTime? lastActiveTime,
+  String? role,
+  String? title,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -143,6 +171,10 @@ Map<String, dynamic> createUsersRecordData({
       'location_name': locationName,
       'location_lat_lng': locationLatLng,
       'job_position': jobPosition,
+      'shortDescription': shortDescription,
+      'last_active_time': lastActiveTime,
+      'role': role,
+      'title': title,
     }.withoutNulls,
   );
 
@@ -164,7 +196,11 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.bio == e2?.bio &&
         e1?.locationName == e2?.locationName &&
         e1?.locationLatLng == e2?.locationLatLng &&
-        e1?.jobPosition == e2?.jobPosition;
+        e1?.jobPosition == e2?.jobPosition &&
+        e1?.shortDescription == e2?.shortDescription &&
+        e1?.lastActiveTime == e2?.lastActiveTime &&
+        e1?.role == e2?.role &&
+        e1?.title == e2?.title;
   }
 
   @override
@@ -179,7 +215,11 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.bio,
         e?.locationName,
         e?.locationLatLng,
-        e?.jobPosition
+        e?.jobPosition,
+        e?.shortDescription,
+        e?.lastActiveTime,
+        e?.role,
+        e?.title
       ]);
 
   @override

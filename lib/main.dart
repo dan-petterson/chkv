@@ -127,8 +127,10 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'HomePage': const HomePageWidget(),
-      'Community': const CommunityWidget(),
       'Settigns': const SettignsWidget(),
+      'Community': const CommunityWidget(),
+      'InBox': const InBoxWidget(),
+      'chat_2_main': const Chat2MainWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -157,6 +159,14 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
+              Icons.manage_accounts,
+              size: 24.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.groups_rounded,
               size: 24.0,
             ),
@@ -165,10 +175,18 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
+              Icons.chat_outlined,
               size: 24.0,
             ),
             label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.forum_outlined,
+              size: 24.0,
+            ),
+            label: '__',
             tooltip: '',
           )
         ],

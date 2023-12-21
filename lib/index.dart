@@ -13,3 +13,13 @@ export '/main/community/community_widget.dart' show CommunityWidget;
 export '/company/company_details/company_details_widget.dart'
     show CompanyDetailsWidget;
 export '/user/user_profile/user_profile_widget.dart' show UserProfileWidget;
+export '/main/in_box/in_box_widget.dart' show InBoxWidget;
+export '/chat/chat/chat_widget.dart' show ChatWidget;
+export '/chat_group_threads/chat_2_details/chat2_details_widget.dart'
+    show Chat2DetailsWidget;
+export '/chat_group_threads/chat_2_main/chat2_main_widget.dart'
+    show Chat2MainWidget;
+export '/chat_group_threads/chat_2_invite_users/chat2_invite_users_widget.dart'
+    show Chat2InviteUsersWidget;
+export '/chat_group_threads/image_details/image_details_widget.dart'
+    show ImageDetailsWidget;

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -139,8 +140,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'UserProfile',
           path: '/userProfile',
           builder: (context, params) => const UserProfileWidget(),
+        ),
+        FFRoute(
+          name: 'InBox',
+          path: '/inBox',
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'InBox') : const InBoxWidget(),
+        ),
+        FFRoute(
+          name: 'Chat',
+          path: '/chat',
+          builder: (context, params) => const ChatWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_Details',
+          path: '/chat2Details',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2DetailsWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'chat_2_main',
+          path: '/chat2Main',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'chat_2_main')
+              : const Chat2MainWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_InviteUsers',
+          path: '/chat2InviteUsers',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2InviteUsersWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'image_Details',
+          path: '/imageDetails',
+          asyncParams: {
+            'chatMessage':
+                getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ImageDetailsWidget(
+            chatMessage: params.getParam('chatMessage', ParamType.Document),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
