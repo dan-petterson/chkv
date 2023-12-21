@@ -307,9 +307,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  _model.fakeMailFromPhone =
-                                      functions.mockMailFromPhone(
-                                          _model.emailAddressController.text)!;
+                                  setState(() {
+                                    _model.fakeMailFromPhone =
+                                        functions.mockMailFromPhone(_model
+                                            .emailAddressController.text)!;
+                                  });
                                   GoRouter.of(context).prepareAuthEvent();
 
                                   final user =
