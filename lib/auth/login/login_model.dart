@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class LoginModel extends FlutterFlowModel<LoginWidget> {
   ///  Local state fields for this page.
@@ -14,7 +13,6 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressController;
-  final emailAddressMask = MaskTextInputFormatter(mask: '(###) ###-####');
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;

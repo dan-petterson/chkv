@@ -251,18 +251,9 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   ),
                                   style:
                                       FlutterFlowTheme.of(context).bodyMedium,
-                                  maxLength: 10,
-                                  maxLengthEnforcement:
-                                      MaxLengthEnforcement.enforced,
-                                  buildCounter: (context,
-                                          {required currentLength,
-                                          required isFocused,
-                                          maxLength}) =>
-                                      null,
                                   keyboardType: TextInputType.number,
                                   validator: _model.textController2Validator
                                       .asValidator(context),
-                                  inputFormatters: [_model.textFieldMask2],
                                 ),
                               ),
                               Padding(

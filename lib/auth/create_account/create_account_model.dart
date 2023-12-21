@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'create_account_widget.dart' show CreateAccountWidget;
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   ///  Local state fields for this page.
@@ -18,7 +17,6 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
-  final textFieldMask2 = MaskTextInputFormatter(mask: '(###) ###-####');
   String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
